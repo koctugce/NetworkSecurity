@@ -1,0 +1,822 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
+    
+    
+      
+        <title>Tugce Koc Network Security With Open Source Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.45e1311d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-security-strategies-and-applications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Tugce Koc Network Security With Open Source Tools" class="md-header__button md-logo" aria-label="Tugce Koc Network Security With Open Source Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tugce Koc Network Security With Open Source Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network Security Strategies and Applications
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+    
+  
+  Network Security Strategies and Applications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Tugce Koc Network Security With Open Source Tools" class="md-nav__button md-logo" aria-label="Tugce Koc Network Security With Open Source Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Tugce Koc Network Security With Open Source Tools
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Network Security Strategies and Applications
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Network Security Strategies and Applications
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1ddos-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.DDoS Attacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.DDoS Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-ddos-attack-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. DDoS Attack Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1. DDoS Attack Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-application-layer-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1. Application Layer Attacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-protocol-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2. Protocol Attacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-volumetric-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.3. Volumetric Attacks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-mechanism-of-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Mechanism of Attacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Mechanism of Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-ddos-attack-botnets-and-attack-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1. DDoS Attack: Botnets and Attack Vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-targeting-attack-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2. Targeting Attack Infrastructure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-use-of-botnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.3. Use of Botnets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-traffic-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.4. Traffic Load
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-understanding-dos-and-ddos-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Understanding DoS and DDoS Attacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Understanding DoS and DDoS Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-dos-attack-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1. DoS Attack Mechanism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-ddos-attack-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2. DDoS Attack Mechanism
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-security-strategies-against-dos-and-ddos-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. Security Strategies Against DoS and DDoS Attacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. Security Strategies Against DoS and DDoS Attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-network-security-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1. Network Security Measures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-bandwidth-scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2. Bandwidth Scalability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-custom-anti-ddos-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3. Custom Anti-DDoS Solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-traffic-analysis-and-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.4. Traffic Analysis and Filtering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data-breaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data Breaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Data Breaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-data-breache-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Data Breache Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ways-to-protect-from-data-breach" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Ways to Protect from Data Breach
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-other-security-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Other Security Threats
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Other Security Threats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-other-security-threat-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Other Security Threat Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ways-to-protect-from-other-security-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Ways to Protect From Other Security Threats
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Ways to Protect From Other Security Threats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-security-policies-against-threats-originating-from-artificial-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1. Security Policies Against Threats Originating from Artificial Intelligence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-security-policies-against-threats-from-iot-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2. Security Policies Against Threats from IoT Devices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="network-security-strategies-and-applications">Network Security Strategies and Applications</h1>
+<p>Ensuring the security of information-based systems used today has become a difficult problem with developing technology and digitalization. It is directly related to basic principles such as information security, confidentiality, integrity and availability, especially in areas such as database management systems, mobile vehicle networks, cloud computing and the internet of things. Ensuring security is very important for existing systems to function properly and provide uninterrupted service to users.</p>
+<p>In order for information-based systems to continue operating safely and sustainably, it is critical to understand the potential types of attacks against these systems. The main focus of this report is to address possible security threats to these systems by focusing on the basic features and operating principles of these systems and to explain best practices for closing these security vulnerabilities.</p>
+<p>Current network security issues to be examined are grouped under three main headings:</p>
+<ul>
+<li>1.DDoS Attacks</li>
+<li>2.Data Breaches</li>
+<li>3.Other Security Threats</li>
+</ul>
+<h2 id="1ddos-attacks">1.DDoS Attacks</h2>
+<p>In the digital age, the proliferation of technology has opened up new frontiers of connectivity and convenience. However, with these advancements comes the shadow of cyber threats, with Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks emerging as prominent disruptors. A distributed denial-of-service (DDoS) attack disrupts the operations of a server, service, or network by flooding it with unwanted Internet traffic. At their worst, these attacks can knock a website or entire network offline for extended periods of time.</p>
+<p>In this section, the working mechanisms of DDoS attacks, the strategies used and the precautions that can be taken against these attacks will be explained.</p>
+<h3 id="11-ddos-attack-types">1.1. DDoS Attack Types</h3>
+<h4 id="111-application-layer-attacks">1.1.1. Application Layer Attacks</h4>
+<p>DDoS attacks consist of types defined as Layer 7 DDoS attacks, which mostly occur at the application layer. The goal of these attacks is to create a denial of service by overloading the target's network resources and server with seemingly legitimate HTTP requests.</p>
+<h4 id="112-protocol-attacks">1.1.2. Protocol Attacks</h4>
+<p>Protocol attacks can also be called state exhaustion attacks. Protocol attacks create a denial of service by overloading infrastructure and network equipment using Layer 3 or 4 protocols (for example, ICMP).</p>
+<h4 id="113-volumetric-attacks">1.1.3. Volumetric Attacks</h4>
+<p>The basis of volumetric attacks is the strategy of consuming the target's available bandwidth using amplification techniques such as using botnets or exploiting common network protocols.</p>
+<h3 id="12-mechanism-of-attacks">1.2. Mechanism of Attacks</h3>
+<h4 id="121-ddos-attack-botnets-and-attack-vectors">1.2.1. DDoS Attack: Botnets and Attack Vectors</h4>
+<p>DDos attacks are usually carried out by a network called a botnet. Botnet contains many devices that are captured using malware, and the aim is to increase the power of the attack with these devices. Attack vectors include various techniques such as TCP/IP-based attacks, DNS amplification, SYN/ACK flooding.</p>
+<h4 id="122-targeting-attack-infrastructure">1.2.2. Targeting Attack Infrastructure</h4>
+<p>Attackers first detect weaknesses or software bugs in the target's infrastructure. In this way, they launch the attack by using these weaknesses. The causes of these vulnerabilities generally include various reasons such as unupdated software and misconfigured services.</p>
+<h4 id="123-use-of-botnets">1.2.3. Use of Botnets</h4>
+<p>Networks called botnets contain devices compromised with malware. By providing remote control of these devices, attackers turn these devices into a collective attack tool. Thanks to this large number of devices, the complexity and scale of the attack is increased.</p>
+<h4 id="124-traffic-load">1.2.4. Traffic Load</h4>
+<p>By sending a very heavy stream of traffic to the designated target, attackers saturate the available bandwidth and overload system resources, preventing legitimate users from accessing the service.</p>
+<h3 id="13-understanding-dos-and-ddos-attacks">1.3. Understanding DoS and DDoS Attacks</h3>
+<h4 id="131-dos-attack-mechanism">1.3.1. DoS Attack Mechanism</h4>
+<p>Flooding Techniques: Attackers ensure monopolization of resources by sending large amounts of traffic or requests to the specified target, thus reducing the quality of service.</p>
+<p>Resource Exhaustion: The main purpose of these attacks is to cause the consumption of important resources such as CPU, memory and bandwidth and to crash the services.</p>
+<h4 id="132-ddos-attack-mechanism">1.3.2. DDoS Attack Mechanism</h4>
+<p>Botnets: A botnet is created by bringing together various devices compromised with malware. These devices combined together are used to increase the effect of the attack.</p>
+<p>Attack Vectors: DDoS attack includes various attack vectors. These attack vectors include TCP/IP-based attacks, SYN/ACK flooding, and DNS amplification.</p>
+<h3 id="14-security-strategies-against-dos-and-ddos-attacks">1.4. Security Strategies Against DoS and DDoS Attacks</h3>
+<p>In order to develop defense systems against DoS and DDoS attacks, some security strategies and precautions must be taken. These strategies include crisis management and response plans against potential attack organizations, as well as measures to strengthen network security.</p>
+<h4 id="141-network-security-measures">1.4.1. Network Security Measures</h4>
+<p>Use of Firewalls and IPS/IDS: It is important to analyze the traffic coming to the network and use Intrusion Prevention Systems (IPS) and Intrusion Detection Systems (IDS) to detect if there is malicious traffic. Thanks to these devices, attacks can be prevented by identifying abnormal traffic.</p>
+<p>Load Balancing Devices: The use of load balancing devices is important to manage the traffic load balancedly and be resistant to incoming attacks. Thanks to these devices, demand-based traffic management is provided and continuity of service is maintained.</p>
+<p>Abnormal Traffic Detection: In order to detect a potential attack early, it is important to detect traffic that is outside normal traffic and deviates from typical usage patterns. For this reason, the use of abnormal traffic detection systems is necessary.</p>
+<h4 id="142-bandwidth-scalability">1.4.2. Bandwidth Scalability</h4>
+<p>Bandwidth Increasing: Having the capacity to scale bandwidth is of great importance when faced with an unexpected traffic increase. If additional bandwidth is used, attack traffic can be absorbed and normal operation can continue without damaging the service.</p>
+<p>Use of CDN: By using Content Delivery Network (CDN), content is distributed geographically and attack traffic is effectively spread by providing service from closer servers. In this way, the target's resources are used more effectively.</p>
+<h4 id="143-custom-anti-ddos-solutions">1.4.3. Custom Anti-DDoS Solutions</h4>
+<p>Real-time Attack Monitoring and Blocking: Anti-DDos solutions have many advanced analytical capabilities to detect attacks and monitor all attacks in real-time. These systems have the ability to detect an attack as soon as it occurs and take various measures to automatically block it.</p>
+<p>Intelligence Sharing: Following the current situation about all security threatening elements in the sector and sharing the information resulting from this intelligence increases the success in the implementation of anti-DDos solutions.</p>
+<h4 id="144-traffic-analysis-and-filtering">1.4.4. Traffic Analysis and Filtering</h4>
+<p>Advanced Traffic Analysis: Conducting a detailed and comprehensive traffic analysis and using traffic filtering tools provides advantages in separating legitimate traffic from malicious traffic. Thanks to these analyses, attack traffic can be distinguished and easily blocked.
+Legitimate Traffic Management: Strategies implemented for advanced traffic management provide advantages in isolating and separating harmful traffic and keeping traffic safe by controlling it to ensure that legitimate users can access services safely.</p>
+<p>These network security strategies make a significant contribution to organizations strengthening their security mechanisms against DoS and DDoS attacks. In addition, organizations need to constantly improve and update their security measures in the face of constantly changing and differentiating attack techniques.</p>
+<h2 id="2-data-breaches">2. Data Breaches</h2>
+<h3 id="21-data-breache-types">2.1. Data Breache Types</h3>
+<p>Data breaches can occur for many reasons. Identifying these reasons is important to create an effective protection strategy.</p>
+<p>Weak and Stolen Credentials: This problem is caused by users using weak passwords and repeating the same password on different accounts. For this reason, users' identity information may be stolen.</p>
+<p>Application Security Vulnerabilities: These vulnerabilities can be used by malicious people due to software updates not being made on time or software vulnerabilities contained in the application.</p>
+<p>Malicious Insider Threats: Insider threats may be present in the environment where the application and software are developed. These threats may occur as a result of employees who have access to information ensuring that this information is transferred outside. The reason for these internal attacks may be information theft and sabotage.</p>
+<p>Malware: The purpose of malware is usually to trick users into stealing information. These tools can be used by cyber attackers. Phishing attacks aim to mislead and deceive users by using e-mail or fake websites. Malware includes many types such as viruses, trojans and ransomware. These software aim to cause harm by infecting systems without users being aware of them.</p>
+<h3 id="22-ways-to-protect-from-data-breach">2.2. Ways to Protect from Data Breach</h3>
+<p>Creating an effective defense mechanism against data breaches is very important for institutions to protect their information assets. There are some basic methods to protect yourself from data breaches.</p>
+<p>Strong Authentication and Password Policies: Using multi-factor authentication systems and adopting and regularly updating strong password policies in organizations is one of the basic ways to protect against data breaches.</p>
+<p>Software Security Updates: Software updates serve the basic purpose of closing security vulnerabilities in systems. Regularly updating and auditing the software and applications used in organizations ensures that systems remain secure by always having stable software. It is also important to update the software very quickly against possible security vulnerabilities.</p>
+<p>Analysis and Monitoring for Insider Threats: Detecting insider threats in advance by analyzing the behavior of organizations is one of the main ways to protect against data breaches. In addition, authorization and access control mechanisms should be established in the systems to limit access to sensitive data and to protect it from data breaches.</p>
+<p>Use of Security Software: Firewalls are an important defense tool that blocks malware by controlling traffic entering and exiting networks. Protection against malware, ransomware and other threats can be provided by using security software. In addition, the use of solutions such as firewalls and IDS/IPS for network security also has an important place for network security.</p>
+<p>Training and Awareness Programs: Organizations provide regular security training to all employees, ensuring that they are conscious and more careful against cyber attacks. Raising awareness by participating in these trainings allows you to be more careful and resistant to social engineering tactics and phishing attacks.</p>
+<p>Data Backup and Recovery Plans: Data backup policies are very important to prevent data loss. Creating regular and secure data backup and recovery plans is important in preventing data breaches. It is also important to have a fast restore policy to minimize data loss.</p>
+<p>Privacy Policies and Compliance: Having clear and enforceable privacy policies in organizations can both provide guidance to employees and prevent data breaches. In addition, it is important for organizations to comply with all legal requirements by following compliance standards.</p>
+<h2 id="3-other-security-threats">3. Other Security Threats</h2>
+<h3 id="31-other-security-threat-types">3.1. Other Security Threat Types</h3>
+<p>Attacks with Artificial Intelligence and Machine Learning: Cyber threats have gained a new dimension as artificial intelligence and machine learning develop day by day. Using artificial intelligence and machine learning, attackers can launch better planned and faster attacks on their targets.</p>
+<p>Attacks from IoT Devices: IoT devices can cause systems to be exposed to many cyber attacks. These threats may increase due to the lack of security standards in IoT devices. IoT devices often contain software that is not or cannot be updated, thus creating potential security vulnerabilities and making systems vulnerable to threats.</p>
+<h3 id="32-ways-to-protect-from-other-security-threats">3.2. Ways to Protect From Other Security Threats</h3>
+<h4 id="321-security-policies-against-threats-originating-from-artificial-intelligence">3.2.1. Security Policies Against Threats Originating from Artificial Intelligence</h4>
+<p>Advanced Encryption: Malicious access is prevented by using artificial intelligence and machine learning techniques and by protecting sensitive data with high-level encryption techniques.</p>
+<p>Constantly Updated Software: Security software supported by Artificial Intelligence and Machine Learning is constantly updated and thus can provide effective protection against new threats.</p>
+<p>Anomaly Detection: Network traffic can be analyzed in detail with artificial intelligence and abnormal activities can be detected in this way and security vulnerabilities can be identified before any attack occurs.</p>
+<h4 id="322-security-policies-against-threats-from-iot-devices">3.2.2. Security Policies Against Threats from IoT Devices</h4>
+<ul>
+<li>Use of strong encryption algorithms on devices.</li>
+<li>Adoption of dual-factor authentication methods.</li>
+<li>The IoT industry is constantly updating its security standards.</li>
+<li>Provide incentives for manufacturers to comply with security best practices.</li>
+<li>Device manufacturers provide regular software updates to fix security vulnerabilities.</li>
+<li>Designing update processes to be easy and automatic for users.</li>
+<li>Use of special security software for network traffic analysis and detection of anomalies.</li>
+<li>Activation of automatic response mechanisms in case abnormal activities are detected.</li>
+</ul>
+<h2 id="4-conclusion">4. Conclusion</h2>
+<p>In today's rapidly digitalizing world, network security strategies and applications are of critical importance in providing effective defense against increasingly increasing threats. While physical, software and network level security strategies form the basis of strategic approaches for data security and privacy, basic applications such as firewalls, IDS/IPS and antivirus software are used to ensure the integrity of the network. In addition, establishing network security policies, security audits, tests and addressing current security problems include important steps for an effective fight against cyber threats. Effective implementation of these strategies will form the basis of protecting organizations against today's complex cyber threats.</p>
+<h2 id="5-references">5. References</h2>
+<p><a href="https://www.kaspersky.com/resource-center/definitions/data-breach"  target="_blank" rel="noopener">https://www.kaspersky.com/resource-center/definitions/data-breach</a></p>
+<p><a href="https://www.cloudflare.com/learning/ddos/how-to-prevent-ddos-attacks/#:~:text=Several%20methods%20for%20reducing%20this,ports%2C%20protocols%2C%20and%20applications"  target="_blank" rel="noopener">https://www.cloudflare.com/learning/ddos/how-to-prevent-ddos-attacks/#:~:text=Several%20methods%20for%20reducing%20this,ports%2C%20protocols%2C%20and%20applications</a></p>
+<p><a href="https://www.radware.com/cyberpedia/ddos-protection/how-to-prevent-ddos-attacks-best-practices-strategies/"  target="_blank" rel="noopener">https://www.radware.com/cyberpedia/ddos-protection/how-to-prevent-ddos-attacks-best-practices-strategies/</a></p>
+<p><a href="https://www.linkedin.com/pulse/understanding-dos-ddos-attacks-threats-defense-strategies-mirza/"  target="_blank" rel="noopener">https://www.linkedin.com/pulse/understanding-dos-ddos-attacks-threats-defense-strategies-mirza/</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="https://github.com/koctugce"  target="_blank" rel="noopener">Tuğçe Koç</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
