@@ -1,4 +1,4 @@
-# AĞ GÜVENLİĞİ STARTEJİLERİ VE UYGULAMALARI
+# AĞ GÜVENLİĞİ Stratejileri VE UYGULAMALARI
 
 Günümüzde kullanılan bilgi tabanlı sistemlerin güvenliğini sağlamak gelişen teknoloji ve dijitalleşme ile birlikte zor bir problem haline gelmiştir. Özellikle veritabanı yönetim sistemleri, hareketli araç ağları, bulut bilişim ve nesnelerin interneti gibi alanlarda bilgi güvenliği, gizlilik, bütünlük ve kullanılabilirlik gibi temel ilkelerle doğrudan ilişkilidir. Güvenliğin sağlanması, mevcut sistemlerin düzgün bir şekilde çalışabilmesi ve kullanıcılara kesintisiz bir hizmet sunabilmesi için çok önemlidir.
 
