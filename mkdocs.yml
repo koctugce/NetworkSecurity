@@ -1,4 +1,4 @@
-site_name: Tugce Koc Network Security
+site_name: Tugce Koc Network Security With Open Source Tools
 theme:
   name: material
   features:
@@ -17,13 +17,13 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline 
         name: Switch to dark mode
-      primary: teal
+      primary: pink
       accent: purple 
     - scheme: slate 
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode    
-      primary: teal
+      primary: pink
       accent: lime
 
 
